@@ -16,17 +16,17 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Name="BtnMessages" Background="Gray" Height="250" Width="250" Grid.Column="0" ToolTip="Шаблоны писем">
+        <Button Name="BtnMessages" Background="Gray" Height="Auto" Grid.Column="1" ToolTip="Шаблоны писем">
             <fa:ImageAwesome Icon="EnvelopeOutline" Width="200"/>
         </Button>
-        <Button Name="BtnUsers" Background="Gray" Height="250" Width="250" Grid.Column="1" ToolTip="Отправители и получатели">
+        <Button Name="BtnUsers" Background="Gray" Height="Auto" Grid.Row="1" Grid.Column="0" ToolTip="Отправители и получатели">
             <fa:ImageAwesome Icon="Users" Width="200"/>
         </Button>
-        <Button Name="BtnPlanner" Background="Gray" Height="250" Width="250" Grid.Row="1" ToolTip="Планировщик">
+        <Button Name="BtnPlanner" Background="Gray" Height="Auto" Grid.Row="1" Grid.Column="1" ToolTip="Планировщик">
             <fa:ImageAwesome Icon="ClockOutline" Width="200"/>
         </Button>
-        <Button Name="BtnService" Background="Gray" Height="250" Width="250" Grid.Row="1" Grid.Column="1" ToolTip="Настройки">
-            <fa:ImageAwesome Icon="Gear" Width="200"/>
+        <Button Name="BtnService" Background="Gray" Height="Auto" Grid.Row="0" Grid.Column="0" ToolTip="Отправка сообщения">
+            <fa:ImageAwesome Icon="SendOutline" Width="200"/>
         </Button>
     </Grid>
 </Window>
