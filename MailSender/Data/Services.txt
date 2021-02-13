@@ -1,0 +1,3 @@
+gmail smtp.gmail.com 465
+mail.ru smtp.mail.ru 465
+yandex smtp.yandex.ru 465
