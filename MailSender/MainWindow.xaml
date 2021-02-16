@@ -25,7 +25,7 @@
         <Button Name="BtnPlanner" Background="Gray" Height="Auto" Grid.Row="1" Grid.Column="1" ToolTip="Планировщик">
             <fa:ImageAwesome Icon="ClockOutline" Width="200"/>
         </Button>
-        <Button Name="BtnService" Background="Gray" Height="Auto" Grid.Row="0" Grid.Column="0" ToolTip="Отправка сообщения">
+        <Button Name="BtnSendMessage" Background="Gray" Height="Auto" Grid.Row="0" Grid.Column="0" ToolTip="Отправка сообщения" Click="BtnSendMessage_Click">
             <fa:ImageAwesome Icon="SendOutline" Width="200"/>
         </Button>
     </Grid>

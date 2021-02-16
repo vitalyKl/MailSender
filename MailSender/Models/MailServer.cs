@@ -34,5 +34,9 @@ namespace MailSender.Models
             Url = url;
             Port = port;
         }
+        public override string ToString()
+        {
+            return ServerName;
+        }
     }
 }
