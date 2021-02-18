@@ -16,7 +16,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Name="BtnMessages" Background="Gray" Height="Auto" Grid.Column="1" ToolTip="Шаблоны писем">
+        <Button Name="BtnMessages" Background="Gray" Height="Auto" Grid.Column="1" ToolTip="Шаблоны писем" Click="BtnMessages_Click">
             <fa:ImageAwesome Icon="EnvelopeOutline" Width="200"/>
         </Button>
         <Button Name="BtnUsers" Background="Gray" Height="Auto" Grid.Row="1" Grid.Column="0" ToolTip="Отправители и получатели">

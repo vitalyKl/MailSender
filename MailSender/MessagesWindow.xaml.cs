@@ -10,31 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MailSender
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MessagesWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MessagesWindow : Window
     {
-        public MainWindow()
+        public MessagesWindow()
         {
             InitializeComponent();
-        }
-
-        private void BtnSendMessage_Click(object sender, RoutedEventArgs e)
-        {
-            Window x = new SendMessageWindow();
-            x.Show();
-        }
-
-        private void BtnMessages_Click(object sender, RoutedEventArgs e)
-        {
-            Window x = new MessagesWindow();
-            x.Show();
         }
     }
 }
