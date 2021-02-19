@@ -6,8 +6,29 @@
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="UsersWindow" Height="450" Width="800"
-        Background="Gray">
-    <Grid>
-        
-    </Grid>
+        Background="Gray"
+        FontSize="16">
+    <DockPanel>
+        <GroupBox Header="Выбор типа пользователей" DockPanel.Dock="Top" Width="300">
+            <StackPanel>
+                <TextBlock Width="100" Margin="0 3 0 0" TextAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Text" Value="Отправители"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=SldUserTypeSelector, Path=Value}" Value="1">
+                                    <Setter Property="Text" Value="Получатели"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <Slider Name="SldUserTypeSelector" Width="80" Maximum="1" Minimum="0" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Margin="0 3 0 0"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Данные" Margin="5 0 5 5">
+            <DataGrid Margin="5 10 5 15">
+            </DataGrid>
+        </GroupBox>        
+    </DockPanel>
 </Window>

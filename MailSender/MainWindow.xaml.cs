@@ -36,5 +36,11 @@ namespace MailSender
             Window x = new MessagesWindow();
             x.Show();
         }
+
+        private void BtnUsers_Click(object sender, RoutedEventArgs e)
+        {
+            Window x = new UsersWindow();
+            x.Show();
+        }
     }
 }
