@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSender"
+        xmlns:data="clr-namespace:MailSender.Data"
         mc:Ignorable="d"
         Title="UsersWindow" Height="450" Width="800"
         Background="Gray"
@@ -28,6 +29,16 @@
         </GroupBox>
         <GroupBox Header="Данные" Margin="5 0 5 5">
             <DataGrid Margin="5 10 5 15">
+                <DataGrid.Style>
+                    <Style TargetType="DataGrid">
+                        <Setter Property="ItemsSource" Value="{x:Static data:TestData.SendUsers}"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=SldUserTypeSelector, Path=Value}" Value="1">
+                                <Setter Property="ItemsSource" Value="{x:Static data:TestData.Reccipients}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Style>
             </DataGrid>
         </GroupBox>        
     </DockPanel>

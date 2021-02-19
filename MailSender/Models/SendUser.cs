@@ -10,6 +10,6 @@ namespace MailSender.Models
     class SendUser: User
     {
         public string Login { get; set; }
-        public SecureString Password { get; set; }
+        public string Password { get; set; }
     }
 }
