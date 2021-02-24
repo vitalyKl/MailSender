@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace MailSender.Data
 {
-    class TestData
-    {        
+    public static class TestData
+    {
         public static List<RecipientUser> Reccipients { get; } = Enumerable.Range(1, 10)
             .Select(i => new RecipientUser
             {
@@ -20,12 +20,12 @@ namespace MailSender.Data
 
         public static List<SendUser> SendUsers { get; } = Enumerable.Range(1, 10)
             .Select(i => new SendUser
-            {                
+            {
                 Name = $"sender{i}",
                 Surname = $"senderSurname{i}",
                 MailAdress = $"sendMail{i}@gmail.com",
                 Login = $"login{i}",
-                Password = $"password{i}"
+                Password = new SecureString()
             }).ToList();
     }
 }

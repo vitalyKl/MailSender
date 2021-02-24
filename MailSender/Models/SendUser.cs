@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MailSender.Models
 {
-    class SendUser: User
+    public class SendUser: User
     {
         public string Login { get; set; }
-        public string Password { get; set; }
+        public SecureString Password { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace MailSender
     /// <summary>
     /// Логика взаимодействия для SendMessageWindow.xaml
     /// </summary>
-    public partial class SendMessageWindow : Window, IUser, IMailMessage
+    public partial class SendMessageWindow : Window, IUser
     {
         private ServersImporter se = new ServersImporter();
         private Infrastructure.MailSender ms = new Infrastructure.MailSender();
@@ -58,8 +58,17 @@ namespace MailSender
         {
             try
             {
+                SendUser su = new SendUser();
+                su.MailAdress = TxtLogin.Text;
+                su.Password = PassLogin.SecurePassword;
+                su.Login = su.MailAdress;
+                RecipientUser ru = new RecipientUser();
+                ru.MailAdress = TxtRecipient.Text;
                 TabStepsList.SelectedIndex++;
-                ms.Send(this, this, ComServerSelector.SelectedItem as MailServer);                
+                Message mesg = new Message();
+                mesg.MailBody = TxtBody.Text;
+                mesg.Subject = TxtSubject.Text;
+                ms.Send(su, ru, mesg, ComServerSelector.SelectedItem as MailServer);                
                 TxtBStatus.Text = "Сообщение успешно отправлено!";
                 IconStatus.Icon = FontAwesome.WPF.FontAwesomeIcon.CheckCircle;
                 IconStatus.Foreground = Brushes.Green;

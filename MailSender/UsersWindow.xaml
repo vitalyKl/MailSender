@@ -28,7 +28,27 @@
             </StackPanel>
         </GroupBox>
         <GroupBox Header="Данные" Margin="5 0 5 5">
-            <DataGrid Margin="5 10 5 15">
+            <DataGrid Margin="5 10 5 15"
+                      GridLinesVisibility="None"
+                      AlternatingRowBackground="LightGray"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="DtGrdLogin"  Header="Логин" Binding="{Binding Path=Login}" Width="Auto">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Visible"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=SldUserTypeSelector, Path=Value}" Value="1">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Path=Name}" Width="Auto"/>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=Surname}" Width="Auto"/>
+                    <DataGridTextColumn Header="Адрес почты" Binding="{Binding Path=MailAdress}" Width="1*"/>
+                </DataGrid.Columns>
                 <DataGrid.Style>
                     <Style TargetType="DataGrid">
                         <Setter Property="ItemsSource" Value="{x:Static data:TestData.SendUsers}"/>

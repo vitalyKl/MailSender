@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MailSender.Models
 {
-    class RecipientUser: User
+    public class RecipientUser: User
     {
     }
 }

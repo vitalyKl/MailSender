@@ -59,10 +59,10 @@ namespace MailSender.Infrastructure
             };            
             client.Send(x);
         }
-        public void Send(IUser user, IMailMessage message, MailServer server)
+        public void Send(SendUser user, RecipientUser recipientUser, Message message, MailServer server)
         {
             client = new SmtpClient(server.Url, server.Port);
-            MailMessage x = new MailMessage(user.Login, message.Recipient);
+            MailMessage x = new MailMessage(user.Login, recipientUser.MailAdress);
             x.Subject = message.Subject;
             x.Body = message.MailBody;
             x.IsBodyHtml = false;

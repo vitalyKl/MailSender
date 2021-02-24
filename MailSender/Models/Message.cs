@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MailSender.View
 {
-    public interface IMailMessage
+    public class Message
     {
-        public string Subject { get; }
-        public string MailBody { get; }
-        public string Recipient { get; }
+        public string Subject { get; set; }
+        public string MailBody { get; set; }
     }
 }
