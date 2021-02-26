@@ -6,9 +6,12 @@
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
-        Title="MessagesWindow" Height="450" Width="800"
+        Height="450" Width="800"
         Background="Gray"
-        FontSize="16">
+        FontSize="16"
+        Title="{Binding Title}"
+        DataContext="{Binding MessagesWindowModel, Source={StaticResource Locator}}"
+        Loaded="{Binding LoadMessages}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -18,6 +21,7 @@
                   Header="Письма">
             <ListBox Margin="5 10 5 15"
                      MaxWidth="200"
+                     ItemsSource="{Binding Messages}"
                  />
         </GroupBox>
         <DockPanel Grid.Column="1">

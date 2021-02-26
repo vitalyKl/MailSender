@@ -1,4 +1,5 @@
 ﻿using MailSender.Models;
+using MailSender.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,5 +28,7 @@ namespace MailSender.Data
                 Login = $"login{i}",
                 Password = new SecureString()
             }).ToList();
+
+       
     }
 }
