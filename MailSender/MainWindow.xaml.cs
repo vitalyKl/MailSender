@@ -24,5 +24,23 @@ namespace MailSender
         {
             InitializeComponent();
         }
+
+        private void BtnSendMessage_Click(object sender, RoutedEventArgs e)
+        {
+            Window x = new SendMessageWindow();
+            x.Show();
+        }
+
+        private void BtnMessages_Click(object sender, RoutedEventArgs e)
+        {
+            Window x = new MessagesWindow();
+            x.Show();
+        }
+
+        private void BtnUsers_Click(object sender, RoutedEventArgs e)
+        {
+            Window x = new UsersWindow();
+            x.Show();
+        }
     }
 }
